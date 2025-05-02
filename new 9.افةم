@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>زر العودة للصفحة السابقة</title>
+</head>
+<body>
+    <h1>مرحبا بك في صفحتنا!</h1>
+    <p>اضغط على الزر للعودة إلى الصفحة السابقة.</p>
+    
+    <!-- زر العودة -->
+    <button onclick="goBack()">العودة</button>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

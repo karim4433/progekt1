@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سورة الفاتحة </title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+           body {
+            font-family: 'Amiri', serif;
+            text-align: center;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border: 5px solid #000;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 20px;
+            line-height: 2;
+        }
+		  /* تنسيق الزر ليكون ثابتًا في أسفل الصفحة */
+        .back-button {
+            position: fixed;
+            bottom: 20px; /* المسافة من أسفل الصفحة */
+            right: 20px;  /* المسافة من اليمين */
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- سورة الفاتحة -->
+        <div class="card my-4">
+            <div class="card-header header">
+                <h1>سورة الفاتحة</h1>
+            </div>
+            <div class="card-body content" >
+                <p>بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ(1) </p>
+                <p>الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ(2) <p>
+                <p>الرَّحْمَٰنِ الرَّحِيمَِانَ </p>
+                <p>مَالِكِ يَوْمِ الدِّينِ(4)</p>
+                <p>إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ(5)</p>
+                <p>اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ(6)</p>
+                <p>صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ(7)</p>
+            </div>
+        </div>
+		 <!-- Footer -->
+    <footer class="bg-light text-center py-4">
+        <ul class="list-unstyled">
+  <p>
+        تابعنا على:
+        <a href="https://www.facebook.com/share/18c3BAeR5b/"><img src="D:\q\photo_2025-04-11_15-46-50.jpg"
+                alt="فيسبوك" width="30" height="30"></a>
+        <a href="https://youtube.com/@cyber_senpai1?si=cN589g0DpZ5EOS_p"><img
+                src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="يوتيوب"
+                width="30" height="30"></a>
+        <a href="https://t.me/@Karimgomaa4433a"><img src="D:\q\photo_2025-04-11_15-47-14.jpg" alt="تليجرام" width="30" height="30"></a>
+        
+    </p>
+        </ul>
+    </footer>
+	
+
+    <!-- زر العودة الثابت -->
+    <button class="back-button" onclick="goBack()">رجوع</button>
+
+    <script>
+        function goBack() {
+            window.history.back(); // هذه الدالة تعيدك للصفحة السابقة
+        }
+    </script>
+	
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <!-- Custom JS -->
+    <script>
+        // Example JavaScript: Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

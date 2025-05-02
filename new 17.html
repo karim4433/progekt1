@@ -1,0 +1,91 @@
+`csharp
+// Model - User.cs
+public class User
+{
+    public int Id { get; set; }
+    public string Username { get; set; }
+    public string Password { get; set; }
+}
+
+// Controller - AccountController.cs
+using System.Linq;
+using System.Web.Mvc;
+using YourNamespace.Models; // استبدل YourNamespace باسم المساحة الفعلية للنموذج
+
+public class AccountController : Controller
+{
+    private static List<User> users = new List<User>
+    {
+        new User { Id = 1, Username = "admin", Password = "1234" }
+    };
+
+    public ActionResult Login()
+    {
+        return View();
+    }
+
+    [HttpPost]
+    public ActionResult Login(string username, string password)
+    {
+        var user = users.FirstOrDefault(u => u.Username == username && u.Password == password);
+        if (user != null)
+        {
+            Session["User"] = user.Username;
+            return RedirectToAction("Dashboard");
+        }
+
+        ViewBag.Error = "اسم المستخدم أو كلمة المرور غير صحيحة!";
+        return View();
+    }
+
+    public ActionResult Logout()
+    {
+        Session.Clear();
+        return RedirectToAction("Login");
+    }
+}
+
+// View - Login.cshtml
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول</title>
+</head>
+<body>
+    <div class="container">
+        <h2>تسجيل الدخول</h2>
+        @if (ViewBag.Error != null)
+        {
+            <p style="color: red;">@ViewBag.Error</p>
+        }
+        <form method="post" action="@Url.Action("Login", "Account")">
+            <input type="text" name="username" placeholder="اسم المستخدم" required>
+            <input type="password" name="password" placeholder="كلمة المرور" required>
+            <button type="submit">تسجيل الدخول</button>
+        </form>
+    </div>
+</body>
+</html>
+
+// Route Configuration - RouteConfig.cs
+public class RouteConfig
+{
+    public static void RegisterRoutes(RouteCollection routes)
+    {
+        routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+
+        routes.MapRoute(
+            name: "Default",
+            url: "{controller}/{action}/{id}",
+            defaults: new { controller = "Account", action = "Login", id = UrlParameter.Optional }
+        );
+    }
+}
+
+
+تم تحديث الكود ليشمل نموذج MVC كاملًا مع نموذج المستخدم، وحدة التحكم، صفحة العرض، وتكوين التوجيهات. إذا كنت بحاجة إلى أي تحسينات أو إضافات، أخبرني بذلك!
